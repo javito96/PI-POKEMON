@@ -103,40 +103,42 @@ router.get('/types', async (req, res, next) => {
 
 
 
-// router.post("/recipe", async (req, res) => {
-//     const { title, summary, image, healthScore, spoonacularScore, steps, createInDb, diets, } = req.body
+router.post("/pokemons", async (req, res) => {
+    const { name, hp, attack, defense, speed, height, weight, strength, img } = req.body
 
     
-//     const recipeCreated = await Recipe.create({
-        
-//         title,
-//         summary,
-//         image,
-//         healthScore,
-//         spoonacularScore,
-//         steps,
-//         createInDb,        
-//     })
-//     const typeOfDiet = await Diet.findAll({
-//         where : {title : diets}
-//     })
-//      await recipeCreated.addDiet(typeOfDiet)
-//     return res.status(200).send("recipe created successfully!")
+    const newPoke = await Pokemon.create({        
+        name,
+        hp,
+        img,
+        attack,
+        defense,
+        speed,
+        height,     
+        weight,  
+        strength,
+        img,  
+    })
+    const typeOfPoke = await Type.findAll({
+        where : {name : req.body.types}
+    })
+     await newPoke.addType(typeOfPoke)
+    return res.status(200).send("recipe created successfully!")
 
 
-// })
+})
 
 
-// router.get("/recipe/:id", async (req, res) => {
-//     const id = req.params.id
-//     const recipesTotal = await getAllRecipe()
-//         if(id) {
-//             let recipeId = await recipesTotal.filter(e => e.id == id) 
-//             recipeId.length ?
-//             res.status(200).json(recipeId) :
-//             res.status(404).send("recipe not found!")
-//         }
-//         }); 
+router.get("/pokemons/:id", async (req, res) => {
+    const id = req.params.id
+    const pokeTotal = await getAllPokemons  ()
+        if(id) {
+            let pokeID = await pokeTotal.filter(e => e.id == id) 
+            pokeID.length ?
+            res.status(200).json(pokeID) :
+            res.status(404).send("Poke id not found!")
+        }
+        }); 
 
 
 module.exports = router; 
