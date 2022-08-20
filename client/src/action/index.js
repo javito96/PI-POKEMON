@@ -9,3 +9,17 @@ export function getPoke(){
         })
     }
 }
+
+export function fulterPokemonsByTypes(payload){
+    return {
+        type: 'FILTER_TYPES',
+        payload
+    }
+}
+
+export function filterDB(payload){
+    return{
+        type: 'FILTER_DB',
+        payload
+    }
+}

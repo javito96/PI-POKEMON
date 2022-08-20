@@ -13,7 +13,7 @@ const router = Router();
 const getApiInfo= async ()=>{
     try {
         let pokeArreglo=[];
-        const pokeApi = await axios.get('https://pokeapi.co/api/v2/pokemon?offset=0&limit=40')
+        const pokeApi = await axios.get('https://pokeapi.co/api/v2/pokemon?offset=0&limit=30')
         let pokeInfo = pokeApi.data.results.map( p => axios.get(p.url))
         
         let pokeResults = axios.all(pokeInfo).then( poke => {
@@ -123,7 +123,7 @@ router.post("/pokemons", async (req, res) => {
         where : {name : req.body.types}
     })
      await newPoke.addType(typeOfPoke)
-    return res.status(200).send("recipe created successfully!")
+    return res.status(200).send(`Pokemon ${name} created successfully!`)
 
 
 })
