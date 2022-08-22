@@ -23,3 +23,31 @@ export function filterDB(payload){
         payload
     }
 }
+
+export function orderByName(payload){
+    return{
+        type: 'ORDER_NAME',
+        payload
+    }
+}
+
+export function orderByAttack(payload){
+    return{
+        type: 'ORDER_ATTACK',
+        payload
+    }
+}
+
+export function getNamePoke(name){
+    return async function (dispatch){
+        try{
+            var json = await axios.get('http://localhost:3001/pokemons?name='+name);
+            return dispatch({
+                type: 'GET_NAMEPOKE',
+                payload: json.data
+            })
+        }catch(error){
+            console.log(error)
+        }
+    }
+}

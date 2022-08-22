@@ -2,7 +2,7 @@ import './App.css';
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import LandingPage from './component/LandingPage'
 import Home from './component/Home';
-import Detail from './component/Detail'
+// import Detail from './component/Detail'
 
 
 function App() {

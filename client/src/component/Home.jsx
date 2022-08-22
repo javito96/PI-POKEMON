@@ -1,10 +1,11 @@
 import React from "react";
 import { useState, useEffect  } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { getPoke, fulterPokemonsByTypes, filterDB } from "../action";
+import { getPoke, fulterPokemonsByTypes, filterDB, orderByName, orderByAttack } from "../action";
 import Card from './Card'
 import { Link } from "react-router-dom";
 import Paginado from "./Paginado";
+import SearchPoke from "./SearchPoke";
 
 export default function Home(){
     const dispatch = useDispatch();
@@ -16,7 +17,7 @@ export default function Home(){
     const indexOfLastPokes = currentPage * pokesPerPage//numero del ultimo indice multiplicado pag, ej recetas 9 pag nro3 = 27
     const indexOfFirstPokes = indexOfLastPokes - pokesPerPage//indice de ultima receta - recetas por pag igual a indice de primer receta
     const currentPokes = allPoke.slice(indexOfFirstPokes, indexOfLastPokes) //slice toma una porcion de lo que yo le paso por parametro
-    // const [Ordenado, setOrder] = useState('')
+    const [Ordenado, setOrder] = useState('')
 
     const paginado = (pageNumbers) => {
         setCurrentPage(pageNumbers)
@@ -43,6 +44,20 @@ function hadleFilterDB(e){
     dispatch(filterDB(e.target.value))
 }
 
+function handleSort(e){
+    e.preventDefault()
+    dispatch(orderByName(e.target.value))
+    setCurrentPage(1)
+    setOrder(`Ordenado ${e.target.value}`)
+  }
+
+  function handleByAttack(e){
+    e.preventDefault()
+    dispatch(orderByAttack(e.target.value))
+    setCurrentPage(1)
+    setOrder(`Ordenado ${e.target.value}`)
+  }
+
 
 
 return (
@@ -51,22 +66,32 @@ return (
          <Link to='/poke'>CREATE NEW POKEMON</Link>
          <button onClick={e=> {handleClick(e)}}>LOAD POKEMONS</button>
 
-         <select>
+         <select  onChange={(e)=>handleSort(e)} >
                  <option disabled selected defaultValue>
                      Alphabetical order
                  </option>
-                 <option value="A-Z">A-Z</option>
-                 <option value="Z-A">Z-A</option>
+                 <option value="asc">A-Z</option>
+                 <option value="desc">Z-A</option>
+         </select>
+
+         <select  onChange={(e)=>handleByAttack(e)} >
+                 <option disabled selected defaultValue>
+                 Attack  order 
+                 </option>
+                 <option value="max">MAX</option>
+                 <option value="min">MIN</option>
          </select>
 
 
          <select onChange={(e) => hadleFilterDB(e)}>
          <option disabled selected defaultValue>
-                    Filter new </option>
+                    Filter new/existing </option>
               <option value="all">All</option>
               <option value="created">Created</option>
               <option value="ex">Existing</option>
             </select>
+
+            
 
 
 
@@ -94,16 +119,11 @@ return (
                 <option value="shadow">Shadow</option>
             </select>
 
+            <div> <SearchPoke/> </div>
 
 
 
-        <select>
-                 <option disabled selected defaultValue>
-                    Filter by weight
-                 </option>
-                 <option value="max_weight">Max</option>
-                 <option value="min_weight">Min</option>
-        </select>
+
 {
     currentPokes?.map((c) => {
             return(
