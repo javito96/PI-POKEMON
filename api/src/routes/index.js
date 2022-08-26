@@ -30,8 +30,6 @@ const getApiInfo= async ()=>{
                     types: p.data.types.map(t=>t.type.name),
                     img: p.data.sprites.other.home.front_default,
 
-                    // img:"official-artwork": {
-                    // "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
                 })
             })
             return pokeArreglo;

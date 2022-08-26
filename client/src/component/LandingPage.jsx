@@ -1,29 +1,22 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-// import "./LandingPage.css";
+import "./LandingPage.css";
 
 
 export default function LandingPage(){
     return (
-        <div>
+        <div  className='LandingPage'>
             <div>
-
             <Link to ='/home'>
-                <button>GET INTO</button>
+                <button className='button' id='button'>GET INTO</button>
             </Link>
             </div>
             <div>
-            <h1>WELCOME </h1>
-            </div>
-            <div>
-            <h2>
+            <h1 className='letras'>WELCOME </h1>
+           
+            <h2  className='descripcion'>
               
-              Don't know what to cook for your meal today?
-               This page helps you search
-                for more than 100 recipes,
-                 choose according to the 
-                 highest score and save 
-                 your recipes.
+            Page for Pokemon fans
               
             </h2>
             </div>

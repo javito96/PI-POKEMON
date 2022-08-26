@@ -1,0 +1,43 @@
+.Card {  
+    margin-left: 20px;
+     background-color: rgba(32, 110, 194, 0.555);
+     margin: 10px;
+     padding: 10px;
+     border-radius: 40px;
+     box-shadow: 5px 4px 20px 4px rgb(255, 146, 5);
+     opacity: 0.9;
+     width: 340px;
+     height: 400px;
+   }   
+   .types {
+    display: flex;
+     justify-content: space-around;
+   }
+
+   .Card:hover {
+     color: rgb(223, 130, 9);
+     background-color: rgba(6, 57, 112, 0.747);
+     transition: 0.7s;
+   }
+ 
+   .Card div {        
+    align-content: flex-end;
+    align-items: center;
+   }
+   .Card h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 33px;
+    color: #ee8e10;   
+   }
+   .Card h5 {    
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    color: #ee8e10;     
+   }
+
+   
+   @media screen and (max-width: 400px) {
+     .Card{
+       width: 280px;
+     }
+   }

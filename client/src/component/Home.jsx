@@ -6,6 +6,8 @@ import Card from './Card'
 import { Link } from "react-router-dom";
 import Paginado from "./Paginado";
 import SearchPoke from "./SearchPoke";
+import './Home.css'
+import Loading from "./Loading";
 
 export default function Home(){
     const dispatch = useDispatch();
@@ -61,8 +63,8 @@ function handleSort(e){
 
 
 return (
-    <div>
-        <h1>POKLEJO</h1>
+    <div className="back">
+        <h1 className="title">POKLEJO</h1>
          <Link to='/poke'>CREATE NEW POKEMON</Link>
          <button onClick={e=> {handleClick(e)}}>LOAD POKEMONS</button>
 
@@ -96,7 +98,7 @@ return (
 
 
          <select onChange={(e)=>handleFilterByType(e)}>
-                <option>Filter by types</option>
+                <option disabled selected defaultValue>Filter by types</option>
                 <option value="normal">Normal</option>
                 <option value="fighting">Fighting</option>
                 <option value="flying">Flying</option>
@@ -122,14 +124,14 @@ return (
             <div> <SearchPoke/> </div>
 
 
-
+<div className='cards'>
 
 {
     currentPokes?.map((c) => {
             return(
                 <div key={c.id}> 
                 <div>
-                    <Link to={'/home' + c.id}>
+                    <Link className="subrayado" to={'/detail/' + c.id}>
                         <Card 
                         id={c.id}
                         key={c.id}  
@@ -141,8 +143,10 @@ return (
                 </div>
             )
         })
-
+      
 }
+</div>
+
 
 <div>
     <Paginado
@@ -153,6 +157,7 @@ return (
 </div>
 
 
+    <Loading/>
     </div>
 )
 
