@@ -63,10 +63,18 @@ function handleSort(e){
 
 
 return (
-    <div className="back">
+    <div className="back1">
         <h1 className="title">POKLEJO</h1>
-         <Link to='/poke'>CREATE NEW POKEMON</Link>
-         <button onClick={e=> {handleClick(e)}}>LOAD POKEMONS</button>
+        <div>
+         <Link to='/poke'>
+            <button id="button" >CREATE NEW POKEMON</button></Link>
+         
+         <button  id="button" onClick={e=> {handleClick(e)}}>LOAD POKEMONS</button>
+
+        </div>
+
+        <h5></h5>
+
 
          <select  onChange={(e)=>handleSort(e)} >
                  <option disabled selected defaultValue>

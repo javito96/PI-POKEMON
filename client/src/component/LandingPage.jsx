@@ -12,13 +12,9 @@ export default function LandingPage(){
             </Link>
             </div>
             <div>
-            <h1 className='letras'>WELCOME </h1>
+            <h1 className='letras'>WELCOME   </h1>
            
-            <h2  className='descripcion'>
-              
-            Page for Pokemon fans
-              
-            </h2>
+    
             </div>
             
             

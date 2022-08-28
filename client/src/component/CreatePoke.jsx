@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useHistory } from 'react-router-dom';
 import { postPokemons, getTypes } from '../action/index'
 import { useDispatch, useSelector } from "react-redux";
-import './CreatePoke.jsx'
+import './CreatePoke.css'
 
 function validate(input) {
     const imgValidate = /(https?:\/\/.*\.(?:png|jpg))/;
@@ -113,10 +113,14 @@ export default function PokeCreate() {
     }, [dispatch]);
 
     return (
-        <div >
-            <div>
+        <div className="fondo">
+            <div className="contaitner">
                 <div>
-                <button><Link  to='/home'>Back home</Link></button>
+                    <Link  to='/home'>
+                <button className="button" id="button">
+                        Back home
+                </button>
+                        </Link>
                 </div>
                 
                 <div>
@@ -225,10 +229,9 @@ export default function PokeCreate() {
                     
                  </div>
 
+                 
 
-
-
-                    
+                 <div>
                               
                 <select onChange={(e) => handleSelect(e)}>
                     {types.map((type, t ) => (
@@ -236,6 +239,7 @@ export default function PokeCreate() {
                         ))}
                 </select>
 
+                        </div>                   
 
 
 

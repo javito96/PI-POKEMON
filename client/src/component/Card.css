@@ -17,6 +17,7 @@
    .Card:hover {
      color: rgb(223, 130, 9);
      background-color: rgba(6, 57, 112, 0.747);
+     transform: scale(1.1);
      transition: 0.7s;
    }
  

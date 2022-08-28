@@ -1,57 +1,19 @@
-nav {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .inpusFilter {
-    border: 1.9px solid #6aa419;
-    color: grey;
-    border-radius: 4.9rem;
-    padding: 1rem 1rem;
-    background-color: transparent;
-    margin-left: 1rem;
-    outline: none;
-  }
-  .buttonCreate {
-    background-color: #f4a927;
-    padding: 1.2rem 1.4rem;
-    color: #f8f8f8;
-    border-radius: 4.9rem;
-    border: none;
-    font-weight: 800;
-    cursor: pointer;
-    font-size: 1.3rem;
-    text-transform: uppercase;
-    transition: all 0.3s;
-  }
-  .descripcion{
-    display: flex;     
-    border-top-left-radius: 40px;
-    justify-content: left;     
-    align-items: left;    
-    height: 100vh;
-    font-family: 'Roboto', sans-serif;
-    font-size: 30px;
-    color: #000000;
-  }
-  .backDescripcion{
-    background-color: #fcc46396;
-  }
-  .back {
-    background-image: url("https://p4.wallpaperbetter.com/wallpaper/420/552/983/pokemon-go-4k-hd-pic-wallpaper-preview.jpg");
+
+
+
+
+  .back1 {
+    background-image: url("https://www.wallpapertip.com/wmimgs/90-909032_cool-wallpapers-pokemon.jpg");
     background-repeat: no-repeat;
      background-size: cover;
      background-attachment: fixed;
-     width: 100%;
-     height: 100%;
-     height: 270vh;
+     width: 100%;    
+     height: 400vh;
      
    }
    
   
-   .title {
-   flood-color: #f4a927;
+   .title {  
    text-decoration: solid;
    text-decoration-color: #f8f8f8;
    text-transform: capitalize;
@@ -60,33 +22,12 @@ nav {
    align-items: center;  
    }
    
-   .button:hover {
-     background-color: #f0750a;
-   }
-   
-  
-   .filters {
-     background-color: #faa200f1;   
-     display: flex;  
-     align-items: center;
-     padding: 10px 30%;
-   }
-   .buttons {
-     background-color: #f9ffea;
-     border-radius: 5px;
-     border: none;
-     cursor: pointer;
-     padding: 4px;
-     transition: all 0.3s ease 0s;
-     color: black;
-     font-size: 20px;
-   }
-   .buttons:hover {
-     background-color: #e67512;
-   }
+
   
    select {
-     background-color: #faa200f1;
+    font-family: 'Roboto', sans-serif;
+    color: #e67512;
+     background-color: #2e23cc9d;
      border-radius: 10px;
      border: 10px;
      padding: 1rem 1.3rem;
@@ -98,7 +39,7 @@ nav {
      border-color: #f8f8f8;
    }
    select:hover {
-     background-color: #df781d;
+     background-color: #2e23cce1;
    }
    
    .filterContainer{
@@ -131,25 +72,14 @@ nav {
     text-decoration: none;
 
    }
-   #recipeNotFound {
-     display: flex;
-     flex-direction: column;
-     border: initial;
-     width: 50%;
-     margin-left: 25%;
-     padding: 5px;
-     border-radius: 10px;
-     background-color: transparent;
-     backdrop-filter: blur(30px);
-   }
+
   
     .cards{
      display: grid;
      grid-template-columns: repeat(3, 1fr);
      margin-left: 30px;
      gap: 20px;
-    }
-    
+    }   
   
   
   
@@ -188,37 +118,14 @@ nav {
   .homeButton:hover {
     background-color: #e5890a;
   }
-  #homeCreate {
-    background-color: #f9ffea;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    padding: 4px;
-    transition: all 0.3s ease 0s;
-    color: black;
-    font-size: 20px;
-    font-family: 'Merienda', cursive;
-    margin-bottom: 20px;
-  }
-  #reloadBtn {
-    background-color: #f9ffea;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    padding: 4px;
-    transition: all 0.3s ease 0s;
-    color: black;
-    font-size: 20px;
-    font-family: 'Merienda', cursive;
-    margin-bottom: 20px;
-  }
+
   
   .filterContainer {
     display: flex;
     justify-content: space-around;
   }
   
-  @media screen and (max-width: 400px) {
+  /* @media screen and (max-width: 400px) {
     .title {
       margin: 5%;
       margin-right: 150px;
@@ -271,4 +178,4 @@ nav {
     }
   }
   
-  
+   */

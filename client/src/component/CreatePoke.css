@@ -1,10 +1,10 @@
-.fondo{ background-image: url("https://img.freepik.com/foto-gratis/plato-comida-dieta-ceto-tomates-cherry-pechuga-pollo-huevos-zanahoria-ensalada-rucula-espinacas-keto-almuerzo-vista-superior_2829-16946.jpg?size=626&ext=jpg&ga=GA1.2.1327031495.1656964396");
+.fondo{ background-image: url("https://images4.alphacoders.com/661/661563.jpg");
     background-repeat: no-repeat;
      background-size: cover;
      background-attachment: fixed;
      width: 100%;
-     height: 100%;
-     height: 100vh;
+ ;
+     height: 150vh;
       
   }
   
@@ -12,7 +12,7 @@
        font-size: 20px;
        color: black;
   }
-  .title {
+  .text {
       flood-color: #f4a927;
       text-decoration: solid;
       text-decoration-color: #f8f8f8;
@@ -23,15 +23,16 @@
       }
   
   label{
-      font: optional;
+      font: bolder;
       text-align: center;
      font-style: oblique;
-     font-size: 20px;
+     font-size: 30px;
+     color: #f4a927;
   }
   
   .contaitner{
       border-radius: 30px;
-      background-color: rgba(51, 49, 50, 0.8);
+      background-color: rgba(216, 152, 78, 0.349);
       height: 920px;
       margin-top: 30px;
       margin-left: auto;
@@ -42,7 +43,7 @@
   }
   
   p{
-      font-size: 15px;
+      font-size: 20px;
       color: rgb(255, 0, 0);
   }
   

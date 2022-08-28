@@ -1,17 +1,14 @@
 
   .LandingPage {   
     align-content: flex-end;
-  background: url('https://cdn.pixabay.com/photo/2020/05/04/11/04/pokeball-5128709_960_720.jpg');
+  background: url('https://i.pinimg.com/originals/e1/07/7a/e1077a7c10ba1f0665d0073c23e6f8ba.jpg');
   width: 100vw;
   height: 50vw; 
   background-repeat: no-repeat; 
   background-size: cover;
   }
-  .descripcion{
-     align-items: center;   
-    font-size: 40px;
-    color: #8b84ce;   
-  }
+  
+
   .letras {
     align-items: center;   
     display: left;     
@@ -19,13 +16,13 @@
     height:10vh;
     font-family: 'Roboto', sans-serif;
     font-size: 65px;
-    color: #6542b8;    
+    color: #024d64;    
   }
   #button {
     border-radius: 20%;
-    background-color: #11187e;
+    background-color: #1666a7b4;
     padding: 1.2rem 1.4rem;
-    color: #f8f8f8;
+    color: #f8f8f8c0;
     border-radius: 4.9rem;
     border: none;
     font-weight: 800;
@@ -33,9 +30,12 @@
     font-size: 1.3rem;
     text-transform: uppercase;
     transition: all 0.3s;
-    justify-content: left;
+    justify-content: left;   
+    text-decoration: none;
   }
-  #button button:hover {  
-    transform-style: preserve-3d; 
-    transform: scale(2);
+  #button:hover {  
+    background-color: #094a80;
+    transition: 0.8s;
+    
+    transform: scale(1.1);
   }

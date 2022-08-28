@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getNamePoke } from "../action";
-// import './SearchPoke.css'
+import './SearchPoke.css'
 
 
 export default function SearchPoke() {
@@ -23,7 +23,7 @@ export default function SearchPoke() {
   return (
   
   
-      <div >
+      <div className="div" >
         
    <input
    type='text'
@@ -31,7 +31,7 @@ export default function SearchPoke() {
    onChange={(e) => handleInputPoke(e)}   
    />
   
-   <button type="submit" onClick={(e) => handleSubmit(e)}>Search</button>
+   <button className="buttonBusqueda" type="submit" onClick={(e) => handleSubmit(e)}>Search</button>
    </div>
  
   );
