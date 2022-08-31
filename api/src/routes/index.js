@@ -101,9 +101,16 @@ router.get('/types', async (req, res, next) => {
 
 
 
-router.post("/pokemons", async (req, res) => {
-    const { name, hp, attack, defense, speed, height, weight, strength, img } = req.body
+router.post("/pokemons", async (req, res, next) => {
 
+    try{
+
+
+    const { name, hp, attack, defense, speed, height, weight, strength, img } = req.body
+   
+    if(!name){
+        return res.status(404).send('Name not found')
+    }
     
     const newPoke = await Pokemon.create({        
         name,
@@ -114,15 +121,16 @@ router.post("/pokemons", async (req, res) => {
         speed,
         height,     
         weight,  
-        strength,
-        img,  
+        strength,       
     })
     const typeOfPoke = await Type.findAll({
         where : {name : req.body.types}
     })
      await newPoke.addType(typeOfPoke)
     return res.status(200).send(`Pokemon ${name} created successfully!`)
-
+    }catch(error){
+        next(error)
+    }
 
 })
 

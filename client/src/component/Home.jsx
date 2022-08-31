@@ -152,20 +152,24 @@ return (
             )
         })
       
-}
+} 
 </div>
+
+
+    {/* <Loading/> */}
+
+
 
 
 <div>
     <Paginado
     pokesPerPage={pokesPerPage}
-    allPoke={allPoke.length}
+    allPoke={allPoke.length-1}
     paginado={paginado}    
     />
 </div>
 
 
-    <Loading/>
     </div>
 )
 

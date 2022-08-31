@@ -4,6 +4,7 @@ const initialState = {
     types: [],
     detail: [],
     cargando: false,
+    detail:[]
     
 }
 
@@ -113,6 +114,13 @@ function rootReducer(state = initialState, action){
                     detail: action.payload,
                     cargando: false,
                 }
+
+                
+                case 'CLEAR_DETAIL':
+                    return {
+                      ...state,
+                      detail: []
+                    }
 
                 
                 

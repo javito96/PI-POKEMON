@@ -12,33 +12,34 @@ function validate(input) {
     if(!input.name) {
       errors.name = "Name is Required";
     }
-    else if (!testName.test(input.title)) {
+    else if (!testName.test(input.name)) {
         errors.name = 'Start the title with capital letter. Only characters "":.,_- are accepted'
     }
-      else if (input.life < 0 || input.life > 100) {
-        errors.life = 'Please enter a number between 0 and 100'
+    else if (!input.hp) {
+        errors.hp = 'Please range of motion'
       }
-      else if (input.strength < 0 || input.strength > 100) {
-        errors.strength = 'Please enter a number between 0 and 100'
+    else if (!input.attack) {
+        errors.attack = 'Please range of motion'
       }
-      else if (input.defense < 0 || input.defense > 100) {
-        errors.defense = 'Please enter a number between 0 and 100'
+    else if (!input.defense) {
+        errors.defense = 'Please range of motion'
       }
-      else if (input.speed < 0 || input.speed > 100) {
-        errors.speed = 'Please enter a number between 0 and 100'
+    else if (!input.speed) {
+        errors.speed = 'Please range of motion'
       }
-      else if (input.height < 0 || input.height > 100) {
-        errors.height = 'Please enter a number between 0 and 100'
+    else if (!input.height) {
+        errors.height = 'Please range of motion'
       }
-      else if (input.weight < 0 || input.weight > 100) {
-        errors.weight = 'Please enter a number between 0 and 100'
+    else if (!input.weight) {
+        errors.weight = 'Please range of motion'
       }
-      else if (!input.type) {
+      
+        else if (!input.img || !imgValidate.test(input.img)) {
+            errors.img = 'Please insert an image type URL'
+        }  
+    else if (!input.type) {
         errors.type = 'Please select Type'
       }
-      else if (!input.image || !imgValidate.test(input.image)) {
-        errors.image = 'Please insert an image type URL'
-    }  
     return errors;
   }
 
@@ -51,8 +52,8 @@ export default function PokeCreate() {
 
     const [input, setInput] = useState({
         name: "",
-        life: "",
-        strength: "",
+        hp: "",
+        attack: "",
         defense: "",
         speed: "",
         height: "",
@@ -88,8 +89,8 @@ export default function PokeCreate() {
         alert(`Pokemon created successfully!`);
         setInput({
             name: "",
-            life: "",
-            strength: "",
+            hp: "",
+            attack: "",
             defense: "",
             speed: "",
             height: "",
@@ -128,7 +129,7 @@ export default function PokeCreate() {
             <h1 className="title">Create your Poke</h1>
 
                 </div>
-            <form className={errors && 'danger'} onSubmit={(e) => handleSubmit(e)}>
+            <form  onSubmit={(e) => handleSubmit(e)}>
                 <div>
                     <label>Name</label>
                     <input
@@ -137,44 +138,34 @@ export default function PokeCreate() {
                         name='name'
                         onChange={(e) => handleChange(e)}
                         />
-                        {errors.name && <p>{errors.name}</p>}
+                        {errors.name && <p >{errors.name}</p>}
                 </div>
 
                 <div>
                     <label>Life</label>
                     <input
                         type='range'
-                        value={input.life}
-                        name='life'
+                        value={input.hp}
+                        name='hp'
                         min="0"
-                        max="200"
+                        max="100"
                         onChange={(e) => handleChange(e)}
                         />
-                         {errors.life && <p>{errors.life}</p>}
+                         {errors.hp && <p>{errors.hp}</p>}
                 </div>
 
-                <div>
-                    <label>Image(URL)</label>
-                    <input
-                        type='text'
-                        value={input.image}
-                        name='image'
-                        onChange={(e) => handleChange(e)}
-                        />
-                         {errors.image && <p>{errors.image}</p>}
-                </div>
 
                 <div>
-                    <label>Strength:</label>
+                    <label>Attack:</label>
                      <input
                        type="range"
-                       value={input.strength}
-                       name="strength"
+                       value={input.attack}
+                       name="attack"
                        min="0"
                        max="100"
                        onChange={(e) => handleChange(e)}
                      />
-                      {errors.strength && <p>{errors.strength}</p>}
+                      {errors.attack && <p>{errors.attack}</p>}
                     
                  </div>
 
@@ -229,6 +220,16 @@ export default function PokeCreate() {
                     
                  </div>
 
+                <div>
+                    <label>Image(URL)</label>
+                    <input
+                        type='text'
+                        value={input.img}
+                        name='img'
+                        onChange={(e) => handleChange(e)}
+                        />
+                         {errors.img && <p>{errors.img}</p>}
+                </div>
                  
 
                  <div>
@@ -261,9 +262,9 @@ export default function PokeCreate() {
             </form>
             
             {input.types.map(el=>
-            <div>
+            <div className="types1">
                 <p>{el}</p>
-                <button className="button" id="button" onClick={() => handleDelete(el)}> x </button>
+                <button className="buttonx" onClick={() => handleDelete(el)}> x </button>
             </div>              
                         
                         )}

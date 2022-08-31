@@ -4,44 +4,49 @@ const { DataTypes } = require('sequelize');
 module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('pokemon', {
-    id: {
+    
+    id:{
       type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
       allowNull: false,
-      primaryKey: true,
-      defaultValue: DataTypes.UUIDV4
+      primaryKey: true
+    },
+    img:{
+      type: DataTypes.STRING,
     },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    life: {
-      type: DataTypes.INTEGER
+    hp:{
+      type: DataTypes.STRING,
+      allowNull: false
     },
-    strength: {
-      type: DataTypes.INTEGER
+    attack:{
+      type: DataTypes.STRING,
+      allowNull: false
     },
-    defense: {
-      type: DataTypes.INTEGER
+    defense:{
+      type: DataTypes.STRING,
+      allowNull: false
     },
-    speed: {
-      type: DataTypes.INTEGER
+    speed:{
+      type: DataTypes.STRING,
+      allowNull: false
     },
-    height: {
-      type: DataTypes.INTEGER
+    height:{
+      type: DataTypes.STRING,
+      allowNull: false
     },
-    weight: {
-      type: DataTypes.INTEGER
-    },
-    image: {
-      type: DataTypes.TEXT,
-      defaultValue: imgDef
+    weight:{
+      type: DataTypes.STRING,
+      allowNull: false
     },
     createdInDb: {
       type: DataTypes.BOOLEAN,
       defaultValue: true,
       allowNull: false
     }
+    
   });
 };
-
-imgDef = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSObbnG_MMQS7e9Mwkf2DNd-ojl4sy0kDVMiDKScnKBE7ypm6cheWcTACsxcZd5-o-0_7s&usqp=CAU"

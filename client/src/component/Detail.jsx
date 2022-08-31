@@ -2,7 +2,7 @@ import React from 'react';
 import {Link, useParams} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import { useEffect } from 'react';
-import { getDetail } from '../action/index';
+import { getDetail, clearDetail } from '../action/index';
 import './Detail.css'
 import Loading from './Loading'
  
@@ -11,8 +11,12 @@ export default function Detail(){
     const { id } = useParams();
     const myPokemon = useSelector((state) => state.detail);
     console.log(myPokemon);
+
     useEffect(()=>{
         dispatch(getDetail(id));
+        return(() =>{
+          dispatch(clearDetail())
+        })
         },[dispatch, id]);
 
 
@@ -40,7 +44,7 @@ export default function Detail(){
                   <div className='lista' >
                  
                       
-                    <h3>Type: {myPokemon[0].types ? myPokemon[0].types + ' ' : myPokemon[0].types.map(t => t.name + (',  '))} </h3>
+                    <h3>Type: {myPokemon[0].types.map(e=> e.name?e.name +',  ': e+',  ') } </h3>
                     <h5>Life: {myPokemon[0].hp}</h5>
                     <h5>Defense: {myPokemon[0].defense}</h5>
                     <h5>Speed: {myPokemon[0].speed}</h5>

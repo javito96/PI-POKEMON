@@ -2,15 +2,17 @@
     background-repeat: no-repeat;
      background-size: cover;
      background-attachment: fixed;
-     width: 100%;
- ;
-     height: 150vh;
+     width: 100%; 
+     height: 100%;
+   
+      
       
   }
   
   .li{
-       font-size: 20px;
-       color: black;
+       font-size: 30px;
+       color: #f4a927;
+       align-items: center;
   }
   .text {
       flood-color: #f4a927;
@@ -20,6 +22,12 @@
       text-rendering: geometricPrecision;
       justify-content: center;     
       align-items: center;  
+      }
+      .types{
+       display: flex;
+       box-sizing: content-box;
+    
+       border-radius: 20px;
       }
   
   label{
@@ -41,9 +49,14 @@
       display: grid;
       justify-content: center;
   }
+  .buttonx{
+    background-color: rgb(170, 1, 1);
+    border-radius: 30%;
+
+  }
   
   p{
-      font-size: 20px;
+      font-size: 30px;
       color: rgb(255, 0, 0);
   }
   

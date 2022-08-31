@@ -79,3 +79,10 @@ export function getDetail(id) {
         })
     }
 }
+
+export function clearDetail(payload) {
+    return {
+      type: 'CLEAR_DETAIL',
+      payload
+    }
+  }
