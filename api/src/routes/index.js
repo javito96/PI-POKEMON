@@ -13,7 +13,7 @@ const router = Router();
 const getApiInfo= async ()=>{
     try {
         let pokeArreglo=[];
-        const pokeApi = await axios.get('https://pokeapi.co/api/v2/pokemon?offset=0&limit=30')
+        const pokeApi = await axios.get('https://pokeapi.co/api/v2/pokemon?offset=0&limit=80')
         let pokeInfo = pokeApi.data.results.map( p => axios.get(p.url))
         
         let pokeResults = axios.all(pokeInfo).then( poke => {

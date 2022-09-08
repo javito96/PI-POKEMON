@@ -2,8 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getNamePoke } from "../action";
-import './SearchPoke.css'
-
+import "./SearchPoke.css";
 
 export default function SearchPoke() {
   const dispatch = useDispatch();
@@ -12,7 +11,7 @@ export default function SearchPoke() {
   function handleInputPoke(e) {
     e.preventDefault();
     setName(e.target.value);
-    console.log(name)
+    console.log(name);
   }
 
   function handleSubmit(e) {
@@ -21,18 +20,20 @@ export default function SearchPoke() {
   }
 
   return (
-  
-  
-      <div className="div" >
-        
-   <input
-   type='text'
-   placeholder= 'Search...'
-   onChange={(e) => handleInputPoke(e)}   
-   />
-  
-   <button className="buttonBusqueda" type="submit" onClick={(e) => handleSubmit(e)}>Search</button>
-   </div>
- 
+    <div className="div">
+      <input
+        type="text"
+        placeholder="Search..."
+        onChange={(e) => handleInputPoke(e)}
+      />
+
+      <button
+        className="buttonBusqueda"
+        type="submit"
+        onClick={(e) => handleSubmit(e)}
+      >
+        Search
+      </button>
+    </div>
   );
 }

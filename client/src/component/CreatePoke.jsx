@@ -230,8 +230,8 @@ export default function PokeCreate() {
 
           <div>
             <select onChange={(e) => handleSelect(e)}>
-              {types.map((type) => (
-                <option key={type.name} value={type.name}>
+              {types.map((type, t) => (
+                <option key={t} value={type.name}>
                   {type.name}
                 </option>
               ))}

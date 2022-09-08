@@ -47,7 +47,7 @@ export function getNamePoke(name){
                 payload: json.data
             })
         }catch(error){
-            console.log(error)
+            alert('pokemon no encontrado')
         }
     }
 }
